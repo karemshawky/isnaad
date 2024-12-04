@@ -1,0 +1,29 @@
+product:
+    - id
+    - name
+    - description
+
+ingredient:
+    - id
+    - name
+    - description
+
+ingredient_product
+    - id
+    - product_id
+    - ingredient_id
+    - used_ingredient
+    - main_stock
+    - used_stock
+    - low_stock
+
+order
+    - id
+    - product_id
+    - quantity
+
+order_ingredient
+    - id
+    - order_id
+    - ingredient_product_id
+    - stock
