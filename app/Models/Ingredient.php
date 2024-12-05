@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Ingredient extends Model
 {
@@ -22,7 +23,7 @@ class Ingredient extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function products()
+    public function products(): BelongsToMany
     {
         return $this->belongsToMany(Product::class, 'ingredient_product', 'ingredient_id', 'product_id')
             ->withPivot(['used_ingredient', 'main_stock', 'used_stock', 'low_stock'])
