@@ -39,10 +39,11 @@ class IngredientService
     public function updateIngredientProduct(Collection $ingredients, int $quantity): void
     {
         foreach ($ingredients as $ingredient) {
+
             $updateUsedStock = $ingredient->pivot->used_stock - $ingredient->pivot->used_ingredient * $quantity;
+
             $ingredient->pivot->update(['used_stock' => $updateUsedStock]);
             $ingredient->pivot->fresh();
         }
     }
-
 }

@@ -18,7 +18,7 @@ class OrderService
      */
     public function __construct(
         protected ProductService $productService,
-        protected IngredientService $ingredientService,
+        protected IngredientService $ingredientService
     ) {}
 
     /**

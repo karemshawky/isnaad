@@ -7,5 +7,5 @@ Route::prefix('/v1')->group(function () {
     Route::get('/user', fn() => request()->user())->middleware('auth:sanctum');
 
     // Orders routes
-    Route::post('/orders', [OrderController::class, 'store']);
+    Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
 });
