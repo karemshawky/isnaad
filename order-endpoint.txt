@@ -1,0 +1,5 @@
+curl --location 'http://<base-url>/api/v1/orders' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--form 'product_id="1"' \
+--form 'quantity="9"'
