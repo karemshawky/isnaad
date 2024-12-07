@@ -29,4 +29,16 @@ class Ingredient extends Model
             ->withPivot(['used_ingredient', 'main_stock', 'used_stock', 'low_stock'])
             ->withTimestamps();
     }
+
+    /**
+     * The orders that belong to the Ingredient
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function orders(): BelongsToMany
+    {
+        return $this->belongsToMany(Order::class, 'order_ingredient', 'ingredient_product_id', 'order_id')
+            ->withPivot(['stock'])
+            ->withTimestamps();
+    }
 }

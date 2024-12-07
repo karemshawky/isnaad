@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ingredient_order', function (Blueprint $table) {
+        Schema::create('order_ingredient', function (Blueprint $table) {
             $table->id();
             $table->foreignId('order_id');
             $table->foreignId('ingredient_product_id');
-            $table->integer('stock');
+            $table->integer('used_quantity')->default(0);
             $table->timestamps();
         });
     }
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ingredient_order');
+        Schema::dropIfExists('order_ingredient');
     }
 };

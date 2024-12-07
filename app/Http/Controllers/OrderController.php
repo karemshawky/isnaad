@@ -13,12 +13,11 @@ class OrderController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\MakeOrderRequest  $request
-     * @return \Illuminate\Http\JsonResponse
-     * @throws \Illuminate\Validation\ValidationException
+     * @return \Illuminate\Validation\ValidationException|\Illuminate\Http\JsonResponse
      */
-    public function store(MakeOrderRequest $request): JsonResponse|ValidationException
+    public function store(MakeOrderRequest $request): ValidationException|JsonResponse
     {
-        Order::create($request->validated());
+        Order::makeOrder($request->validated());
 
         return response()->json(['message' => 'Order created successfully.'], JsonResponse::HTTP_CREATED);
     }

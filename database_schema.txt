@@ -26,4 +26,4 @@ order_ingredient
     - id
     - order_id
     - ingredient_product_id
-    - stock
+    - used_quantity

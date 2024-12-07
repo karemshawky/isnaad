@@ -34,7 +34,7 @@ class ProductSeeder extends Seeder
         ]);
 
         $burger->ingredients()->attach([
-            $beef->id => ['used_ingredient' => 150, 'main_stock' => 20000, 'used_stock' => 9000],
+            $beef->id => ['used_ingredient' => 150, 'main_stock' => 20000, 'used_stock' => 12000],
             $cheese->id => ['used_ingredient' => 30, 'main_stock' => 5000, 'used_stock' => 3500],
             $onion->id => ['used_ingredient' => 20, 'main_stock' => 1000, 'used_stock' => 800],
         ]);
